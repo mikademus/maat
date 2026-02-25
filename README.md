@@ -1,12 +1,11 @@
 # Maat: The Test Harness
+<div style="float:right"><img src="maat_logo.jpeg" width="200"></div>
 
-*Maat* is the Egyptian goddess of truth, justice, and cosmic order. In the Weighing of the Heart the heart of the deceased is weighed against her feather before Osiris, Thoth and Anubis. The scales do not negotiate. The result is binary. Failed tests are eaten by the Ammit monster.
+*Maat* is the Egyptian goddess of truth, justice, and cosmic order. In the Weighing of the Heart the heart of the deceased is weighed against a feather before Osiris, Thoth and Anubis. The scales do not negotiate. The result is binary. Failed tests are eaten by the Ammit monster.
 
 A test harness should work the same way.
 
----
-
-Maat is a lightweight, self-contained, single-header C++ test harness with no dependencies and no boilerplate. Drop in the header, write your tests, run them.
+`Maat` is a lightweight, self-contained, single-header C++ test harness with no dependencies and no boilerplate. Drop in the header, write your tests, run them.
 
 ## Installation
 Copy maat.h into your project and include it:
