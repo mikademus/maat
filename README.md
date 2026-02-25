@@ -1,11 +1,22 @@
 # Maat: The Test Harness
-<div style="float:right"><img src="maat_logo.jpeg" width="200"></div>
 
-*Maat* is the Egyptian goddess of truth, justice, and cosmic order. In the Weighing of the Heart the heart of the deceased is weighed against a feather before Osiris, Thoth and Anubis. The scales do not negotiate. The result is binary. Failed tests are eaten by the Ammit monster.
+| <img src="maat_logo.jpeg" width="300"> | `Maat` is a lightweight, self-contained, single-header C++ test harness with no dependencies and no boilerplate. Drop in the header, write your tests, run them. |
+| --- | --- |
+
+*Maat* is the Egyptian goddess of truth, justice, and cosmic order. In the Weighing of the Heart the heart of the deceased is weighed against a feather before Osiris, Thoth and Anubis. The scales do not negotiate. The result is binary. Failed tests are eaten by the Ammit monster. |
 
 A test harness should work the same way.
 
-`Maat` is a lightweight, self-contained, single-header C++ test harness with no dependencies and no boilerplate. Drop in the header, write your tests, run them.
+## Why Maat Exists
+
+The C++ testing landscape is paradoxical. There are excellent, mature, well-documented frameworks — and yet setting up a test for a small utility function can consume more time than writing the function itself.
+
+Google Test requires a CMake fetch, a linked library, and a registration mechanism before anything is verified. Catch2 and doctest are more self-contained but arrive with their own DSLs, their own main(), and enough machinery that understanding what is actually happening requires reading documentation rather than code. Boost.Test is Boost — which says everything. CppUnit faithfully mirrors JUnit's Java architecture, which is a questionable virtue in a language that isn't Java.
+
+The common thread is that these frameworks were built to scale — to enterprise codebases, CI pipelines, and teams with dedicated QA infrastructure. That scaling comes at a cost that small and mid-sized projects simply shouldn't have to pay.
+
+What was needed was something closer to the metal: assertions that are just macros, tests that are just functions, a runner that is just a loop, and a report that is just output. No framework. No discovery. No opinions.
+Maat is that. The scales are simple by design — it is the judgment that matters, not the apparatus.
 
 ## Installation
 Copy maat.h into your project and include it:
