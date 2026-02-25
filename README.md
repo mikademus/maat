@@ -16,7 +16,8 @@ Copy maat.h into your project and include it:
 That's it.
 
 ## Usage
-**Assertions**
+
+### Assertions
 Maat provides two classes of assertion reflecting the hard and soft judgment of the scales:
 `REQUIRE` — hard assertion. On failure the test terminates immediately, as a heart too heavy for the feather ends the ceremony:
 ```cpp
@@ -35,7 +36,7 @@ EXP_NEQ(result, forbidden, "value should differ");
 NOTE("testing edge case: empty input");
 ```
 
-## Running tests
+### Running tests
 ```cpp
 RUN_TEST(my_test_function);
 ```
@@ -50,7 +51,7 @@ bool my_test_function()
 ```
 Returning false from the test function is equivalent to a failed REQUIRE.
 
-## Summary
+### Print summary
 Call `maat::print_summary()` at the end of your test run:
 ```cpp
 maat::print_summary();
@@ -61,7 +62,7 @@ Output:
 Summary: 7 passed, 1 failed, 8 total.
 ```
 
-## A complete example
+### A complete example
 ```cpp
 #include "maat.h"
 #include <vector>
@@ -85,7 +86,7 @@ int main()
 }
 ```
 
-## Output
+### Output
 
 Tests report live as they run, with the status overwriting the "running" indicator:
 ```
@@ -96,8 +97,8 @@ Tests report live as they run, with the status overwriting the "running" indicat
 ```
 Failed assertions are reported beneath the test name — `Req:` for hard failures that terminated the test, `Exp:` for soft failures that were accumulated. Ammit is not selective.
 
-## Namespace
-All Maat internals live under maat::tests. Your test files need not reference the namespace directly — the macros handle everything.
+### Namespace
+All Maat internals live under ::maat. Your test files need not reference the namespace directly — the macros handle everything.
 
 ## Licence
 Licensed under the MIT License.
