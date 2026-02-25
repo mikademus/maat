@@ -28,14 +28,14 @@ That's it.
 ## Usage
 
 ### Assertions
-Maat provides two classes of assertion reflecting the hard and soft judgment of the scales:
+Maat provides two classes of assertion, reflecting terminal and fatal failures. All take a message that ia displayed if the test fails:
 `REQUIRE` — hard assertion. On failure the test terminates immediately, as a heart too heavy for the feather ends the ceremony:
 ```cpp
 REQUIRE(ptr != nullptr, "pointer must not be null");
 REQ_EQ(result, expected, "values must match");
 REQ_NEQ(result, forbidden, "value must differ");
 ```
-`EXPECT` — soft assertion. On failure the verdict is recorded but execution continues, accumulating all failures before the final judgment:
+`EXPECT` — soft assertion. On failure the verdict is recorded but execution continues to allow additional failures to be recorded before the test is reported failed:
 ```cpp
 EXPECT(value > 0, "value should be positive");
 EXP_EQ(result, expected, "values should match");
